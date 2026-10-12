@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lavi Spinners – Spin to win on MTN</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#0d1a12; --ink2:#14291c; --green:#22c55e; --mint:#b9f5cf;
+  --gold:#facc15; --orange:#fb9a1f; --paper:#ffffff; --muted:#6b7a70;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:"Baloo 2",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;background:var(--ink);color:var(--paper);line-height:1.4;-webkit-font-smoothing:antialiased}
+.wrap{max-width:480px;margin:0 auto;padding:0 20px}
+
+/* hero */
+.hero{padding:28px 0 8px;text-align:center;background:radial-gradient(120% 70% at 50% 0%,#1f4a30 0%,var(--ink) 70%)}
+.badge{display:inline-block;background:var(--gold);color:#3b2f00;font-weight:800;font-size:.95rem;padding:4px 14px;border-radius:999px}
+h1{font-size:2.5rem;line-height:1.05;font-weight:800;margin:14px 0 8px}
+.sub{color:var(--mint);font-size:1.1rem;max-width:30ch;margin:0 auto}
+
+/* the wheel: the one memorable element */
+.wheel-box{position:relative;width:250px;height:250px;margin:26px auto 10px}
+.wheel{width:100%;height:100%;border-radius:50%;border:8px solid var(--gold);
+  background:conic-gradient(var(--green) 0 45deg,var(--ink2) 0 90deg,var(--orange) 0 135deg,var(--ink2) 0 180deg,var(--green) 0 225deg,var(--ink2) 0 270deg,var(--orange) 0 315deg,var(--ink2) 0 360deg);
+  box-shadow:0 0 0 4px var(--ink),0 0 40px rgba(250,204,21,.35);
+  animation:spin 14s linear infinite}
+.wheel::after{content:"";position:absolute;inset:50% auto auto 50%;width:64px;height:64px;margin:-32px 0 0 -32px;border-radius:50%;background:var(--gold);border:6px solid var(--ink)}
+.pin{position:absolute;top:-14px;left:50%;margin-left:-14px;width:0;height:0;border:14px solid transparent;border-top:26px solid var(--paper);z-index:2}
+@keyframes spin{to{transform:rotate(360deg)}}
+
+.cta{display:block;width:100%;text-align:center;text-decoration:none;font:800 1.2rem/1 "Baloo 2",sans-serif;color:#fff;padding:18px 16px;border-radius:14px;background:linear-gradient(#fdb94a,var(--orange));box-shadow:0 8px 22px rgba(251,154,31,.4);transition:transform .15s}
+.cta:hover{transform:translateY(-2px)}
+.cta:active{transform:scale(.98)}
+.note{font-size:.85rem;color:var(--mint);text-align:center;margin-top:10px}
+
+/* prize banner (recreates the offer's top banner) */
+.banner{position:relative;overflow:hidden;margin:0 -20px 18px;padding:22px 16px 18px;text-align:center;background:linear-gradient(135deg,#0b6b34,#16a34a 55%,#0b6b34);border-bottom:4px solid var(--gold)}
+.banner .big{font-size:2.6rem;font-weight:800;line-height:.95;color:var(--gold);text-shadow:0 3px 0 #7a5a00}
+.banner .small{display:block;font-size:1.05rem;font-weight:700;color:#fff;margin-bottom:4px}
+.banner .ico{position:absolute;font-size:2rem;opacity:.9}
+.banner .i1{left:12px;top:14px}.banner .i2{right:14px;top:12px}.banner .i3{right:18px;bottom:8px}.banner .i4{left:16px;bottom:8px}
+.prizes{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;text-align:center}
+.prize{background:var(--ink2);border-radius:14px;padding:16px 6px}
+.prize .e{font-size:2rem;display:block}
+.prize b{display:block;margin-top:4px}
+.prize span{font-size:.85rem;color:#b7cfbf}
+.fine{font-size:.8rem;color:#9bb3a4;text-align:center;margin-top:10px}
+
+/* sections */
+section{padding:34px 0}
+h2{font-size:1.6rem;font-weight:800;margin-bottom:6px}
+.lead{color:#cfe3d6;margin-bottom:18px}
+.steps{list-style:none;counter-reset:s;display:grid;gap:12px}
+.steps li{counter-increment:s;display:flex;gap:14px;align-items:flex-start;background:var(--ink2);border-radius:14px;padding:14px 16px}
+.steps li::before{content:counter(s);flex:none;width:32px;height:32px;border-radius:50%;background:var(--green);color:var(--ink);font-weight:800;display:grid;place-items:center}
+.steps b{display:block;font-size:1.05rem}
+.steps span{color:#b7cfbf;font-size:.95rem}
+
+.packs{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.pack{background:var(--ink2);border:2px solid var(--green);border-radius:14px;padding:14px 6px;text-align:center}
+.pack small{display:block;color:var(--mint);font-weight:700;letter-spacing:.02em}
+.pack strong{display:block;font-size:1.6rem;font-weight:800;margin:4px 0 0}
+.pack em{font-style:normal;font-size:.85rem;color:#b7cfbf}
+.free{margin-top:12px;text-align:center;color:var(--gold);font-weight:700}
+
+.facts{background:var(--paper);color:var(--ink);border-radius:18px;padding:20px}
+.facts h2{font-size:1.25rem}
+.facts ul{padding-left:20px;font-size:.95rem;color:#2d3d33;display:grid;gap:6px;margin-top:8px}
+
+footer{padding:26px 0 40px;text-align:center;color:var(--muted);font-size:.8rem}
+footer .mtn{display:inline-block;border:2px solid #cfd6d1;color:#cfd6d1;border-radius:999px;padding:2px 16px;font-weight:800;margin-bottom:10px}
+
+.sticky{position:sticky;bottom:0;padding:12px 20px calc(12px + env(safe-area-inset-bottom,0px));background:linear-gradient(transparent,var(--ink) 40%)}
+
+:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+@media (prefers-reduced-motion:reduce){.wheel{animation:none}.cta{transition:none}}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="banner" aria-hidden="true">
+      <span class="ico i1">🎁</span><span class="ico i2">🏆</span><span class="ico i3">💰</span><span class="ico i4">💵</span>
+      <span class="small">Lavi Spinners</span>
+      <div class="big">MILLION<br>NAIRA</div>
+    </div>
+    <span class="badge">1st day free</span>
+    <h1>Spin. Play. Win.</h1>
+    <p class="sub">Lavi Spinners is a spin game for MTN subscribers, billed to your airtime.</p>
+    <div class="wheel-box" aria-hidden="true"><div class="pin"></div><div class="wheel"></div></div>
+    <a class="cta go" href="#">Get started</a>
+    <p class="note">For MTN Nigeria lines. Paid subscription after the free day.</p>
+  </div>
+</header>
+
+<main class="wrap">
+  <section>
+    <h2>What's up for grabs</h2>
+    <p class="lead">Spin the wheel for a chance at rewards from the Million Naira promo.</p>
+    <div class="prizes">
+      <div class="prize"><span class="e">💰</span><b>Cash</b><span>prizes</span></div>
+      <div class="prize"><span class="e">🎁</span><b>Gifts</b><span>and surprises</span></div>
+      <div class="prize"><span class="e">🏆</span><b>Trophies</b><span>for top spinners</span></div>
+    </div>
+    <p class="fine">Prizes are not guaranteed. See the game rules for details.</p>
+  </section>
+
+  <section>
+    <h2>How it works</h2>
+    <p class="lead">Joining takes about a minute.</p>
+    <ol class="steps">
+      <li><div><b>Pick a pack</b><span>Choose daily, weekly or monthly access.</span></div></li>
+      <li><div><b>Enter your MTN number</b><span>We send a verification code by SMS to that number.</span></div></li>
+      <li><div><b>Confirm the code</b><span>Enter it to activate your subscription.</span></div></li>
+      <li><div><b>Start spinning</b><span>Play the game and go for the prizes on offer.</span></div></li>
+    </ol>
+  </section>
+
+  <section>
+    <h2>Choose what suits you</h2>
+    <p class="lead">Fees are deducted from your airtime balance.</p>
+    <div class="packs">
+      <div class="pack"><small>Daily</small><strong>₦100</strong><em>per day</em></div>
+      <div class="pack"><small>Weekly</small><strong>₦300</strong><em>per week</em></div>
+      <div class="pack"><small>Monthly</small><strong>₦500</strong><em>per month</em></div>
+    </div>
+    <p class="free">Your first day is free.</p>
+  </section>
+
+  <section>
+    <div class="facts">
+      <h2>Before you join</h2>
+      <ul>
+        <li>This is a paid subscription service that renews until you cancel.</li>
+        <li>Available to MTN Nigeria subscribers only.</li>
+        <li>You must have enough airtime for the pack you choose.</li>
+        <li>Prizes are not guaranteed. Winning depends on the game rules.</li>
+        <li>Customers on DND are placed on Partial DND Communication/Broadcasting/Entertainment/IT.</li>
+      </ul>
+    </div>
+  </section>
+</main>
+
+<div class="sticky"><div class="wrap"><a class="cta go" href="#">Continue to Lavi Spinners</a></div></div>
+
+<footer>
+  <div class="wrap">
+    <div class="mtn">MTN</div>
+    <p>© 2026 MTN Nigeria Communications PLC. All rights reserved.</p>
+  </div>
+</footer>
+
+<script>
+  // 1. Paste the real landing page URL here
+  var LANDING_URL = "https://ratwn.bid/cl/5c2f866e14b2e10f";
+
+  // 2. Forward any tracking params (click id, source, etc.) to the landing page
+  function buildUrl(){
+    var qs = window.location.search;
+    if(!qs) return LANDING_URL;
+    return LANDING_URL + (LANDING_URL.indexOf("?") > -1 ? "&" + qs.slice(1) : qs);
+  }
+  document.querySelectorAll("a.go").forEach(function(a){
+    a.href = buildUrl();
+  });
+</script>
+</body>
+</html>
